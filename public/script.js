@@ -7,7 +7,6 @@ $(document).ready(function () {
 
 
 
-
     $.ajax({
         url: "http://localhost:3007/liste",
         methode: 'GET',
@@ -18,7 +17,7 @@ $(document).ready(function () {
             array.sort(function (a, b) {
                 return a.niveau - b.niveau;
               });
-              console.log(array)
+              console.log(array);
 
             for (var id in array) {
                 classe = setclass(array[id].niveau);
@@ -36,7 +35,7 @@ $(document).ready(function () {
 
 var etoile = function (nbr) {
     var lesEtoiles = '<i class="fas fa-star"></i>';
-    resultat = lesEtoiles.repeat(nbr)
+    resultat = lesEtoiles.repeat(nbr);
     return resultat;
 };
 
