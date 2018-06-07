@@ -3,33 +3,43 @@
 $(document).ready(function () {
     var classement ="";
     var classe = "";
+    var array = [];
+
+
+
+
     $.ajax({
         url: "http://localhost:3007/liste",
         methode: 'GET',
         success: function (data) {
-            for (var id in data) {
-                classe = setclass(data[id].niveau);
-                classement = data[id].niveau;
-                console.log(classe);
-                console.log(data[id].Competence)
-                $("#liste-competences").append('<li class="list-group-item ' + classe + '">' + data[id].Competence + ' ' + etoile(classement) + '</li>');
-                
-            }
 
+            // met l'objet dans l'ordre croissant
+            array = data ;
+            array.sort(function (a, b) {
+                return a.niveau - b.niveau;
+              });
+              console.log(array)
+
+            for (var id in array) {
+                classe = setclass(array[id].niveau);
+                classement = array[id].niveau;
+                // console.log(classe);
+                // console.log(classement)
+                // console.log(data[id].Competence)
+                $("#liste-competences").append('<li class="list-group-item ' + classe + '">' + array[id].Competence + ' ' + etoile(classement) + '</li>');                
+            }
         }
     });
 
 
 });
 
-
 var etoile = function (nbr) {
     var lesEtoiles = '<i class="fas fa-star"></i>';
     resultat = lesEtoiles.repeat(nbr)
-
     return resultat;
 };
-var tab = [];
+
 
 var setclass = function (niveau) {
     var classe = "";
@@ -57,3 +67,4 @@ var setclass = function (niveau) {
 
     return classe;
 }
+
