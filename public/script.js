@@ -1,6 +1,7 @@
 
 
 $(document).ready(function () {
+    var classement ="";
     var classe = "";
     $.ajax({
         url: "http://localhost:3007/liste",
@@ -8,10 +9,11 @@ $(document).ready(function () {
         success: function (data) {
             for (var id in data) {
                 classe = setclass(data[id].niveau);
+                classement = data[id].niveau;
                 console.log(classe);
                 console.log(data[id].Competence)
-                $("#liste-competences").append('<li class="list-group-item ' + classe + '">' + data[id].Competence + ' ' + etoile(data[id].niveau) + '</li>');
-
+                $("#liste-competences").append('<li class="list-group-item ' + classe + '">' + data[id].Competence + ' ' + etoile(classement) + '</li>');
+                
             }
 
         }
