@@ -19,6 +19,19 @@ $(document).ready(function () {
               });
               console.log(array);
 
+
+            var array2 = array.splice(0,5)
+            // array.splice(0,4)
+
+            for (var id in array2) {
+                classe = setclass(array2[id].niveau);
+                classement = array2[id].niveau;
+                // console.log(classe);
+                // console.log(classement)
+                // console.log(data[id].Competence)
+                $("#liste-competences-2").append('<li class="list-group-item ' + classe + '">' + array2[id].Competence + ' ' + etoile(classement) + '</li>');                
+            }
+
             for (var id in array) {
                 classe = setclass(array[id].niveau);
                 classement = array[id].niveau;
