@@ -1,0 +1,42 @@
+[
+    {
+        "Competence": "js",
+        "niveau": 3
+    },
+    {
+        "Competence": "node.js",
+        "niveau": 2
+    },
+    {
+        "Competence": "html",
+        "niveau": 5
+    },
+    {
+        "Competence": "css",
+        "niveau": 5
+    },
+    {
+        "Competence": "bootstrap",
+        "niveau": 4
+    },
+    {
+        "Competence": "jquery",
+        "niveau": 4
+    },
+    {
+        "Competence": "express",
+        "niveau": 2
+    },
+    {
+        "Competence": "JSON",
+        "niveau": 2
+    },
+    {
+        "Competence": "LINUX",
+        "niveau": 4
+    },
+    {
+        "Competence": "WINDOWS",
+        "niveau": 4
+    }
+]
